@@ -1,72 +1,78 @@
 package Arrays;
 
-public class Conta {
 
-	private double saldo;
-	private int agencia;
-	private int numero;
-	private static int total = 0;
+/**
+ * Classe representa a moldura de uma conta
+ * 
+ * @author Nico Steppat
+ *
+ */
+public abstract class Conta extends Object {
 
-	public Conta(int agencia, int numero) {
-		Conta.total++;
-		this.agencia = agencia;
-		this.numero = numero;
-		this.saldo = 100;
-	}
+    protected double saldo;
+    private int agencia;
+    private int numero;
+    private static int total = 0;
+    
+    /**
+     * Construtor para inicializar o objeto Conta a partir da agencia e numero.
+     * 
+     * @param agencia
+     * @param numero
+     */
+    public Conta(int agencia, int numero){
+        Conta.total++;
+        //System.out.println("O total de contas é " + Conta.total);
+        this.agencia = agencia;
+        this.numero = numero;
+        //this.saldo = 100;
+        //System.out.println("Estou criando uma conta " + this.numero);
+    }
 
-	public void deposita(double valor) {
-		this.saldo = this.saldo + valor;
-	}
+    public abstract void deposita(double valor);
 
-	public boolean saca(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			return false;
-		}
-	}
+    /**
+     * Valor precisa ser maior do que o saldo.
+     * 
+     * @param valor
+     * @throws SaldoInsuficienteException
+     */
 
-	public boolean transfere(double valor, Conta destino) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			destino.deposita(valor);
-			return true;
-		}
-		return false;
-	}
+    public double getSaldo(){
+        return this.saldo;
+    }
 
-	public double getSaldo() {
-		return this.saldo;
-	}
+    public int getNumero(){
+        return this.numero;
+    }
 
-	public int getNumero() {
-		return this.numero;
-	}
+    public void setNumero(int numero){
+        if(numero <= 0) {
+            System.out.println("Nao pode valor menor igual a 0");
+            return;
+        }
+        this.numero = numero;
+    }
 
-	public void setNumero(int numero) {
-		if (numero <= 0) {
-			System.out.println("Nao pode valor menor igual a 0");
-			return;
-		}
-		this.numero = numero;
-	}
+    public int getAgencia(){
+        return this.agencia;
+    }
 
-	public int getAgencia() {
-		return this.agencia;
-	}
+    public void setAgencia(int agencia){
+       if(agencia <= 0) {
+           System.out.println("Nao pode valor menor igual a 0");
+           return;
+       }
+       this.agencia = agencia;
+    }
 
-	public void setAgencia(int agencia) {
-		if (agencia <= 0) {
-			System.out.println("Nao pode valor menor igual a 0");
-			return;
-		}
-		this.agencia = agencia;
-	}
-
-
-	public static int getTotal() {
-		return Conta.total;
+    public static int getTotal(){
+        return Conta.total;
+    }
+    
+    @Override
+	public String toString() {
+		return "Numero: " + this.numero + ", Agencia: " + this.agencia;
 	}
 
 }
