@@ -8,7 +8,7 @@ public class TesteArrays {
 		Conta cc = new ContaCorrente(22, 11);
 		guardador.adiciona(cc);
 		
-		Conta cc2 = new ContaCorrente(22, 22);
+		int cc2 = 22;
         guardador.adiciona(cc2);
 
         int tamanho = guardador.getQuantidadeDeElementos();
