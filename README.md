@@ -1,14 +1,14 @@
 # PraticandoArrays
-Aula sobre Arrays da Alura - formação Java e Orientação a Objetos.
+Aula sobre Arrays da Alura - formaÃ§Ã£o Java e OrientaÃ§Ã£o a Objetos.
 
 ### O que aprendi
 
- - Um array é uma estrutura de dados e serve para guardar elementos (valores primitivos ou referências)
- - Arrays usam colchetes ([]) sintaticamente
- - Arrays têm um tamanho fixo!
- - Um array também é um objeto!
- - Arrays são zero-based (o primeiro elemento se encontra na posição 0)
- - Um array é sempre inicializado com os valores padrões.
- - Ao acessar uma posição inválida recebemos a exceção ArrayIndexOutOfBoundException
+ - Um array Ã© uma estrutura de dados e serve para guardar elementos (valores primitivos ou referÃªncias)
+ - Arrays usam colchetes [] sintaticamente
+ - Arrays tÃªm um tamanho fixo!
+ - Um array tambÃ©m Ã© um objeto!
+ - Arrays sÃ£o zero-based (o primeiro elemento se encontra na posiÃ§Ã£o 0)
+ - Um array Ã© sempre inicializado com os valores padrÃµes.
+ - Ao acessar uma posiÃ§Ã£o invÃ¡lida recebemos a exceÃ§Ã£o ArrayIndexOutOfBoundException
  - Arrays possuem um atributo length para saber o tamanho
  -  A forma literal de criar uma Array, com o uso de chaves {}.
